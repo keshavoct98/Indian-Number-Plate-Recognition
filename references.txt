@@ -1,0 +1,7 @@
+https://www.kaggle.com/tustunkok/license-plate-detection/data
+https://github.com/AlexeyAB/darknet
+https://github.com/hunglc007/tensorflow-yolov4-tflite
+
+avg fps - 2.5
+python demo_video.py --input inputs/demo1.mp4 --output results/output1.avi --size 608
+python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608
