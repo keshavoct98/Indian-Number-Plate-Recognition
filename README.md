@@ -10,11 +10,12 @@
 Yet to be added
 
 ### Demo:
+Download pretrained model from ![here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
 <pre><code> #Run demo on sample video with default arguments
  python demo_video.py
  
  #Run demo with command line arguments </br>
- python demo_video.py --input <Input_video_path> --output <Path_to_save_result> --size <frame_size>"
+ python demo_video.py --input "Input_video_path" --output "Path_to_save_result" --size "frame_size"
  
  #Example
  python demo_video.py --input inputs/demo1.mp4 --output results/output1.avi --size 608 </code></pre>
@@ -23,7 +24,7 @@ Yet to be added
 python demo.py
 
 #Run demo with command line arguments
-python demo_video.py --input <Input_image_path> --output <Path_to_save_result> --size <frame_size>"
+python demo_video.py --input "Input_image_path" --output "Path_to_save_result" --size "frame_size"
 
 #Example
 python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </code></pre>
@@ -45,8 +46,8 @@ python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </co
 4. Now to train darknet YOLOv4 on the dataset, follow the steps given here - https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
 
 ### References
-https://www.kaggle.com/tustunkok/license-plate-detection/data
-https://github.com/AlexeyAB/darknet
-https://github.com/hunglc007/tensorflow-yolov4-tflite
-http://openaccess.thecvf.com/content_ICCVW_2019/papers/RLQ/Nguyen_State-of-the-Art_in_Action_Unconstrained_Text_Detection_ICCVW_2019_paper.pdf
-https://pypi.org/project/keras-ocr/
+https://www.kaggle.com/tustunkok/license-plate-detection/data </br>
+https://github.com/AlexeyAB/darknet </br>
+https://github.com/hunglc007/tensorflow-yolov4-tflite </br>
+http://openaccess.thecvf.com/content_ICCVW_2019/papers/RLQ/Nguyen_State-of-the-Art_in_Action_Unconstrained_Text_Detection_ICCVW_2019_paper.pdf </br>
+https://pypi.org/project/keras-ocr/ </br>
