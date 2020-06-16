@@ -7,11 +7,11 @@
 3. Rejecting false positives using pattern matching w.r.t. Indian license plates. </br>
 
 ### Requirements:
-absl-py 0.9.0
-easydict 1.9
-keras_ocr 0.8.3
-opencv-python 4.2.0.34
-tensorflow 2.2.0
+ absl-py==0.9.0 </br>
+ easydict==1.9 </br>
+ keras_ocr==0.8.3 </br>
+ opencv-python==4.2.0.34 </br>
+ tensorflow==2.2.0 </br>
 
 ### Demo:
 Download pretrained model from ![here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
@@ -33,15 +33,18 @@ python demo_video.py --input "Input_image_path" --output "Path_to_save_result" -
 #Example
 python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </code></pre>
 
-#Note - Size must be a multiple of 32. Increasing size increases the accuracy of license plate detection but requires more memory. Reduce the size if your gpu runs out of memory.
+#Note - 
+1. Command line argument 'size' must be a multiple of 32. Increasing 'size' increases the accuracy of license plate detection but requires more memory. Reduce the size if your gpu runs out of memory.
+2. If the gpu-ram is 4 GB or less, Reduce memory-limit in this [line](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
+3. If the gpu-ram is 2 GB or less, Reduce memory-limit [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo.py#L17) and [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
 
 ### Results:
-![results/output1.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output1.jpg)
-![results/output2.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output2.jpg)
-![results/output3.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output3.jpg)
-![results/output4.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output4.jpg)
-![results/output1.gif](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output1.gif)
-![results/output2.gif](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output2.gif)
+[results/output1.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output1.jpg)
+[results/output2.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output2.jpg)
+[results/output3.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output3.jpg)
+[results/output4.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output4.jpg)
+[results/output1.gif](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output1.gif)
+[results/output2.gif](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output2.gif)
 
 ### How to train:
 1. Download dataset zip from this link - https://www.kaggle.com/tustunkok/license-plate-detection/data
