@@ -1,13 +1,17 @@
 # License-Plate-Recognition
 1. License plate detection using **YOLOv4** trained on custom data. </br>
-  a. YOLOv4 - mAP(), IOU(), fps() </br>
-  b. YOLOv3 - mAP(), IOU() </br>
-  c. YOLOv2 - mAP(), IOU() </br>
+  mAP :- 88.25%(IoU threshold = 50%) </br>
+  avg IoU :- 62.87%(conf_threshold = 0.25) </br>
+  avg fps :- 16 </br>
 2. Plate text detection and recognition using keras-ocr. </br>
 3. Rejecting false positives using pattern matching w.r.t. Indian license plates. </br>
 
 ### Requirements:
-Yet to be added
+absl-py 0.9.0
+easydict 1.9
+keras_ocr 0.8.3
+opencv-python 4.2.0.34
+tensorflow 2.2.0
 
 ### Demo:
 Download pretrained model from ![here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
@@ -46,8 +50,9 @@ python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </co
 4. Now to train darknet YOLOv4 on the dataset, follow the steps given here - https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
 
 ### References
-https://www.kaggle.com/tustunkok/license-plate-detection/data </br>
-https://github.com/AlexeyAB/darknet </br>
-https://github.com/hunglc007/tensorflow-yolov4-tflite </br>
-http://openaccess.thecvf.com/content_ICCVW_2019/papers/RLQ/Nguyen_State-of-the-Art_in_Action_Unconstrained_Text_Detection_ICCVW_2019_paper.pdf </br>
-https://pypi.org/project/keras-ocr/ </br>
+1. https://www.kaggle.com/tustunkok/license-plate-detection/data </br>
+2. https://github.com/AlexeyAB/darknet </br>
+3. https://github.com/hunglc007/tensorflow-yolov4-tflite </br>
+4. http://openaccess.thecvf.com/content_ICCVW_2019/papers/RLQ/Nguyen_State-of-the-Art_in_Action_Unconstrained_Text_Detection_ICCVW_2019_paper.pdf </br>
+5. https://pypi.org/project/keras-ocr/ </br>
+6. http://www.rto.org.in/vehicle-registration-plates-of-india/format-of-number-plates.htm
