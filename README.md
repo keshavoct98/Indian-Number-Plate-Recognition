@@ -14,7 +14,7 @@
 &nbsp; tensorflow==2.2.0 </br>
 
 ### Demo:
-Download pretrained model from ![here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
+Download pretrained model from [here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
 <pre><code> #Run demo on sample video with default arguments
  python demo_video.py
  
