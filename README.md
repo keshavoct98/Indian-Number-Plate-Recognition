@@ -4,7 +4,7 @@
   avg IoU :- 62.87%(conf_threshold = 0.25) </br>
   avg fps :- 16 </br>
 2. Plate text detection and recognition using keras-ocr. </br>
-3. Rejecting false positives using pattern matching w.r.t. Indian license plates. </br>
+3. Rejecting false positives by matching pattern with Indian license plates. </br>
 
 ### Requirements:
 &nbsp; absl-py==0.9.0 </br>
@@ -37,6 +37,8 @@ python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </co
 1. Command line argument 'size' must be a multiple of 32. Increasing 'size' increases the accuracy of license plate detection but requires more memory. Reduce the size if your gpu runs out of memory.
 2. If the gpu-ram is 4 GB or less, Reduce memory-limit in this [line](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
 3. If the gpu-ram is 2 GB or less, Reduce memory-limit [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo.py#L17) and [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
+4. Since there are 3 models running in a sequence(yolov4 for plate detection, keras-ocr CRAFT text detection and keras-ocr CRNN text recognition), memory usage is high and fps is low. This solution gives an average fps of 2.5 on gtx 1660 gpu.
+Fps and memory usage can be improved by training a single YOLOv4 model for both license plate detection and text recognition.
 
 ### Results:
 ![results/output1.jpg](https://github.com/keshavoct98/License-Plate-Recognition/blob/master/results/output1.jpg)
