@@ -3,7 +3,7 @@
   mAP :- 88.25%(IoU threshold = 50%) </br>
   avg IoU :- 62.87%(conf_threshold = 0.25) </br>
   avg fps :- 16 </br>
-2. Plate text detection and recognition using keras-ocr. </br>
+2. License plate text detection and recognition using keras-ocr. </br>
 3. Rejecting false positives by matching pattern with Indian license plates. </br>
 
 ### Requirements:
