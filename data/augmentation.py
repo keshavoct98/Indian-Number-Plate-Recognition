@@ -1,13 +1,20 @@
+'''Augmentation methods used are Padding, Horizontal shearing in clockwise direction,
+Vertical shearing  in clockwise direction, Horizontal shearing in anti-clockwise direction, 
+Vertical shearing in anti-clockwise direction'''
+
 # Importing libraries
 import cv2
 import numpy as np
 import pandas as pd
-from augmentation_methods import draw_box, pad, shear
+from augmentation_methods import pad, shear
 
-# Reading license plate coordinates csv file
+# Reading csv file for license plate bounding box coordinates
 df = pd.read_csv('dataset/indian_license_plates.csv')
 
 def augmentAndSave(df_row, aug_type):
+    ''' Calls augmentation function on images and write augmented images back to disk.
+        Also returns a dictionary with updated details of the augmented image''' 
+
     img = cv2.imread('dataset/Indian Number Plates/'+df_row[0]+'.jpeg')
     bbox = np.array((df_row[3]*df_row[1], df_row[4]*df_row[2], df_row[5]*df_row[1], df_row[6]*df_row[2]))
     
@@ -31,6 +38,7 @@ def augmentAndSave(df_row, aug_type):
     return dict_for_df
 
 No_of_images = df.shape[0]
+
 # Padding images
 for i in range(0, No_of_images):
     if i%10 == 0: # Images skipped for vaildation set
@@ -39,9 +47,10 @@ for i in range(0, No_of_images):
         df = df.append(augmentAndSave(df.iloc[i, :], 'pad'), ignore_index=True)
 
 No_of_images = 2*(No_of_images - (int(No_of_images/10) + 1)) + (int(No_of_images/10) + 1)
+
 # Shearing images
 for i in range(0, No_of_images):
-    if i%10 == 0 and i<236:
+    if i%10 == 0 and i<236: # Images skipped for vaildation set
         continue
     else:
         df = df.append(augmentAndSave(df.iloc[i, :], 'shearYNeg'), ignore_index=True)
@@ -49,5 +58,6 @@ for i in range(0, No_of_images):
         df = df.append(augmentAndSave(df.iloc[i, :], 'shearXNeg'), ignore_index=True)
         df = df.append(augmentAndSave(df.iloc[i, :], 'shearXPos'), ignore_index=True)
 
+# Saving updated dataframe back to disk
 df = df.sample(frac=1).reset_index(drop=True)
 df.to_csv('dataset/indian_license_plates.csv', index = None)

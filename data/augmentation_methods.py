@@ -3,15 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from skimage import img_as_ubyte
 from skimage import transform as tf
-
-def draw_box(img, crd): # draw bounding box
     
-    img_copy = img.copy()
-    cv2.rectangle(img_copy, (int(crd[0]), int(crd[1])), (int(crd[2]), int(crd[3])), (0,0,255), 3)
-    plt.imshow(cv2.cvtColor(img_copy, cv2.COLOR_BGR2RGB))
-    plt.show()
-    
-def pad(img, crd, resize_val): # resize image and calculates new bounding box coordinates
+def pad(img, crd, resize_val): # pad image with constant border and calculates new bounding box coordinates
     
     pad_y, pad_x = int(img.shape[0]/resize_val), int(img.shape[1]/resize_val)
     img_padded = cv2.copyMakeBorder(img,pad_y,pad_y,pad_x,pad_x,cv2.BORDER_CONSTANT)
@@ -22,7 +15,7 @@ def pad(img, crd, resize_val): # resize image and calculates new bounding box co
     
     return img_padded, new_crd
 
-def shear(img, crd, shear_val, dir_xy): # shear image  and calculates new bounding box coordinates
+def shear(img, crd, shear_val, dir_xy): # shear image and calculates new bounding box coordinates
     
     if dir_xy == 0:
         arr = np.array([[1,shear_val,0], [0,1,0], [0,0,1]])
