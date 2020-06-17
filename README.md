@@ -37,7 +37,7 @@ python demo.py --input inputs/1.jpg --output results/output1.jpg --size 608 </co
 1. Command line argument 'size' must be a multiple of 32. Increasing 'size' increases the accuracy of license plate detection but requires more memory. Reduce the size if your gpu runs out of memory.
 2. If the gpu-ram is 4 GB or less, Reduce memory-limit in this [line](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
 3. If the gpu-ram is 2 GB or less, Reduce memory-limit [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo.py#L17) and [here](https://github.com/keshavoct98/License-Plate-Recognition/blob/be64d2e01e2d1d9ef54fc36dd931a3f9b74a6c82/demo_video.py#L17) to a value less than your gpu-ram.
-4. Since there are 3 models running in a sequence(yolov4 for plate detection, keras-ocr CRAFT text detection and keras-ocr CRNN text recognition), memory usage is high and fps is low. This solution gives an average fps of 2.5 on gtx 1660 gpu.
+4. Since there are 3 models running in a sequence(yolov4 for license plate detection, keras-ocr CRAFT text detection and keras-ocr CRNN text recognition), memory usage is high and fps is low. This solution gives an average fps of 2.5 on gtx 1660 gpu.
 Fps and memory usage can be improved by training a single YOLOv4 model for both license plate detection and text recognition.
 
 ### Results:
@@ -51,7 +51,7 @@ Fps and memory usage can be improved by training a single YOLOv4 model for both 
 ### How to train:
 1. Download dataset zip from this link - https://www.kaggle.com/tustunkok/license-plate-detection/data
 2. Create a folder named 'dataset' inside 'data' and extract the content of zip into 'dataset' folder.
-3. Go to 'data' folder and run the given command on cmd - "python augmentation.py". After augmentation number of images will be 2154.
+3. Go to 'data' folder and run this command on cmd - "python augmentation.py". After augmentation total number of images will be 2154.
 4. Now to train darknet YOLOv4 on the dataset, follow the steps given here - https://github.com/AlexeyAB/darknet#how-to-train-to-detect-your-custom-objects
 
 ### References
