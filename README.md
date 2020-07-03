@@ -7,11 +7,11 @@
 3. Rejecting false positives by matching pattern with Indian license plates. </br>
 
 ### Requirements:
-&nbsp; absl-py==0.9.0 </br>
-&nbsp; easydict==1.9 </br>
-&nbsp; keras_ocr==0.8.3 </br>
-&nbsp; opencv-python==4.2.0.34 </br>
-&nbsp; tensorflow==2.2.0 </br>
+&nbsp;&nbsp; absl-py==0.9.0 </br>
+&nbsp;&nbsp; easydict==1.9 </br>
+&nbsp;&nbsp; keras_ocr==0.8.3 </br>
+&nbsp;&nbsp; opencv-python==4.2.0.34 </br>
+&nbsp;&nbsp; tensorflow==2.2.0 </br>
 
 ### Demo:
 Download pretrained model from [here](https://drive.google.com/file/d/1cAcL8E3segwC10vP404MZBi1sBRv-it-/view?usp=sharing) and copy it inside "data" folder. </br>
