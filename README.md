@@ -1,5 +1,5 @@
 # License-Plate-Recognition
-1. License plate detection using **YOLOv4** trained on custom data. </br>
+1. License plate detection using **YOLOv4** trained on custom indian dataset. </br>
   mAP :- 88.25%(IoU threshold = 50%) </br>
   avg IoU :- 62.87%(conf_threshold = 0.25) </br>
   avg fps :- 16 </br>
